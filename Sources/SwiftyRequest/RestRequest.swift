@@ -181,8 +181,7 @@ public class RestRequest: NSObject  {
         // Instantiate basic mutable request
         let urlComponents = URLComponents(string: url) ?? URLComponents(string: "")!
         let urlObject = urlComponents.url ?? URL(string: "n/a")!
-        self.request = URLRequest(url: urlObject)
-
+        self.request = URLRequest(url: urlObject, cachePolicy: URLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10)
         // Set inital fields
         self.url = url
 
